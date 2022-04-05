@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import Box from "../components/Box";
 import Draggable from "../components/Draggable";
 import Floor from "../components/Floor";
-import LightBulb from "../components/LightBulb";
+import {Light} from "../components/Light";
 import OrbitControls from "../components/OrbitControls";
 import css from "../styles/Home.module.css";
 import Icosahedron from "../components/Icosahedron";
@@ -20,7 +20,7 @@ export default function Home() {
         }}
       >
         <ambientLight color={"orange"} intensity={0.1} />
-        <LightBulb position={[0, 2, 1]} />
+        <Light position={[0, 2, 1]} />
         <Draggable>
           <Suspense fallback={null}>
             <Box rotateX={5} rotateY={2} />
@@ -32,7 +32,7 @@ export default function Home() {
           </Suspense>
         </Draggable>
           <Suspense fallback={null}>
-            <Object position={[-1,0,1]} url="/shell.obj" />
+            <Object position={[0,0,0]} url="/shell.obj" />
           </Suspense>
         <OrbitControls />
         <Floor position={[0, -1, 0]} />
